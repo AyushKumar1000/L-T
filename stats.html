@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Larsen & Toubro - Statistics</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Top Navigation -->
+    <div class="top-navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="https://logos-download.com/wp-content/uploads/2021/02/Larsen__Toubro_Logo.png" alt="L&T Logo">
+            </div>
+            <ul class="top-nav-links">
+                <li><a href="#">Media</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Investors</a></li>
+                <li><a href="#">Group Websites</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <ul class="nav-links">
+                <li class="home-icon"><a href="index.html"><i class="fas fa-home"></i></a></li>
+                <li><a href="about.html">About L&T Group</a></li>
+                <li><a href="stats.html">Statistics</a></li>
+                <li><a href="business.html">Our Businesses</a></li>
+                <li><a href="products.html">Products And Services</a></li>
+                <li><a href="investors.html">Investor Relations</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="tenders.html">Tenders</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="search-icon">
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats-section">
+        <div class="container">
+            <h2>L&T Key Statistics</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Revenue Growth</h3>
+                    <canvas id="revenueChart"></canvas>
+                </div>
+                <div class="stat-card">
+                    <h3>Market Share</h3>
+                    <canvas id="marketShareChart"></canvas>
+                </div>
+                <div class="stat-card">
+                    <h3>Employee Growth</h3>
+                    <canvas id="employeeChart"></canvas>
+                </div>
+                <div class="stat-card">
+                    <h3>Project Distribution</h3>
+                    <canvas id="projectChart"></canvas>
+                </div>
+            </div>
+            <div class="key-metrics">
+                <div class="metric-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>Global Presence</h3>
+                    <p>50+ Countries</p>
+                </div>
+                <div class="metric-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Workforce</h3>
+                    <p>50,000+ Employees</p>
+                </div>
+                <div class="metric-card">
+                    <i class="fas fa-industry"></i>
+                    <h3>Manufacturing Units</h3>
+                    <p>100+ Facilities</p>
+                </div>
+                <div class="metric-card">
+                    <i class="fas fa-project-diagram"></i>
+                    <h3>Active Projects</h3>
+                    <p>1000+ Projects</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">Projects</a></li>
+                    <li><a href="investors.html">Investors</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect With Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Larsen & Toubro. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Revenue Growth Chart
+        const revenueCtx = document.getElementById('revenueChart').getContext('2d');
+        new Chart(revenueCtx, {
+            type: 'line',
+            data: {
+                labels: ['2019', '2020', '2021', '2022', '2023', '2024', '2025'],
+                datasets: [{
+                    label: 'Revenue (in ₹ Crores)',
+                    data: [145000, 156000, 168000, 182000, 195000, 210000, 225000],
+                    borderColor: '#0056b3',
+                    tension: 0.1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Annual Revenue Growth'
+                    }
+                }
+            }
+        });
+
+        // Market Share Chart
+        const marketShareCtx = document.getElementById('marketShareChart').getContext('2d');
+        new Chart(marketShareCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Infrastructure', 'Engineering', 'Technology', 'Manufacturing'],
+                datasets: [{
+                    data: [35, 25, 20, 20],
+                    backgroundColor: ['#0056b3', '#007bff', '#28a745', '#ffc107']
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Business Segment Distribution'
+                    }
+                }
+            }
+        });
+
+        // Employee Growth Chart
+        const employeeCtx = document.getElementById('employeeChart').getContext('2d');
+        new Chart(employeeCtx, {
+            type: 'bar',
+            data: {
+                labels: ['2019', '2020', '2021', '2022', '2023', '2024', '2025'],
+                datasets: [{
+                    label: 'Number of Employees',
+                    data: [35000, 38000, 42000, 45000, 50000, 53000, 56000],
+                    backgroundColor: '#0056b3'
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Employee Growth'
+                    }
+                }
+            }
+        });
+
+        // Project Distribution Chart
+        const projectCtx = document.getElementById('projectChart').getContext('2d');
+        new Chart(projectCtx, {
+            type: 'pie',
+            data: {
+                labels: ['Domestic', 'International'],
+                datasets: [{
+                    data: [65, 35],
+                    backgroundColor: ['#0056b3', '#28a745']
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Project Distribution'
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html> 
