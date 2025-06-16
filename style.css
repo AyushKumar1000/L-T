@@ -98,10 +98,13 @@ body {
 }
 
 .search-icon {
-    color: white;
     cursor: pointer;
-    padding: 0 1rem; 
-    border-left: 1px solid white;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+.search-icon:hover {
+    color: #007bff;
 }
 
 /* vedio Section */
@@ -586,6 +589,18 @@ body {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+}
+
+/* Financial Reports External Link Icon */
+.financial-reports ul li a i {
+    font-size: 0.8em;
+    margin-left: 5px;
+    color: #2563eb;
+    transition: transform 0.3s ease;
+}
+
+.financial-reports ul li a:hover i {
+    transform: translate(2px, -2px);
 }
 
 /* Careers Section */
